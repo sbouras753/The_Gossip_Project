@@ -1,0 +1,29 @@
+<!-- On inclus le contenu dans un row et une colonne pour limiter la largeur -->
+<div class="container">
+	<div class="row">
+		<div class="col-6 mx-auto">
+			<!-- Le titre de la page -->
+			<h3 class="card-title text-center m-4">Accède à ton compte</h3>
+
+			<!-- Zone du formulaire -->
+			<%= form_for(:session, url: session_index_path) do |f| %>
+
+			<%= f.label :email %>
+			<%= f.email_field :email, class: 'form-control' %>
+
+			<%= f.label :password %>
+			<%= f.password_field :password, class: 'form-control' %>
+
+			<%= f.label :remember_me, class: "checkbox inline" do %>
+			<%= f.check_box :remember_me %>
+			<span>Souviens toi de moi sur cet ordinateur</span>
+			<% end %>
+
+			<%= f.submit "Je me connecte", class: "btn btn-primary form-control" %>
+			<% end %>
+
+			<p>Nouveau? <%= link_to "Je m'inscris!", new_user_path %></p>
+
+		</div>
+	</div>
+</div>
