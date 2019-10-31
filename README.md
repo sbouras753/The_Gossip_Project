@@ -1,6 +1,5 @@
 #The-Gossip-Project
 
-Group :François Loupias, Thomas Guilmin  
 
 
 
