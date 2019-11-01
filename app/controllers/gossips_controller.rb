@@ -54,10 +54,10 @@ class GossipsController < ApplicationController
     if @gossip.update(title: params[:title],
       content: params[:content])
 
-      flash[:success] = "Gossip successfully modified! 👍"
+      flash[:success] = "Gossip modifié! 👍"
       redirect_to gossip_path
     else
-      render 'edit'
+      render 'Edite'
     end
   end
 
