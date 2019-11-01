@@ -23,11 +23,11 @@ class UsersController < ApplicationController
       )
 
     if @user.save
-      flash[:success] = "Welcome #{@user.first_name}! 👍"
+      flash[:success] = "Bienvenue #{@user.first_name}! 👍"
       log_in(@user)
       redirect_to root_path #Affiche l'index des gossips
     else
-      render 'new' # Reste sur la view de gossips New.
+      render 'Nouveau' # Reste sur la view de gossips New.
     end   
   end
 
