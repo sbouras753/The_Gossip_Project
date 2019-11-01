@@ -11,10 +11,10 @@ class GossipsController < ApplicationController
       content: params[:content])
 
     if @gossip.save
-      flash[:success] = "Gossip successfully added! 👍"
+      flash[:success] = "Gossip ajouté! 👍"
       redirect_to gossips_path #Affiche l'index des gossips
     else
-      render 'new' # Reste sur la view de gossips New.
+      render 'Nouveau' # Reste sur la view de gossips New.
     end
   end
 
@@ -68,7 +68,7 @@ class GossipsController < ApplicationController
     # et on prévient, sinon on détruit le potin
     if !is_not_author? 
       @gossip.destroy
-      flash[:alert] = "Gossip deleted! 🗑️"
+      flash[:alert] = "Gossip supprimé! 🗑️"
       redirect_to gossips_path
     end
   end
@@ -76,7 +76,7 @@ class GossipsController < ApplicationController
   # On utilise une méthode pour sécuriser l'édition et la suppression des gossips
   def is_not_author?
     if current_user != @gossip.user
-      flash[:alert] = "Well tried! You're not the gossip author..."
+      flash[:alert] = "Bien essayé mais tu n'es pas l'auteur de ce gossip..."
       redirect_to gossip_path
     end
   end
