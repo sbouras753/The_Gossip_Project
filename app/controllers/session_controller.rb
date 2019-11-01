@@ -9,7 +9,7 @@ class SessionController < ApplicationController
       redirect_to user
     else
       flash.now[:danger] = 'Email ou mot de passe invalide'
-      render 'new'
+      render 'Nouveau'
     end
   end
 
