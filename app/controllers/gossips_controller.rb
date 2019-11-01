@@ -57,7 +57,7 @@ class GossipsController < ApplicationController
       flash[:success] = "Gossip modifié! 👍"
       redirect_to gossip_path
     else
-      render 'Edite'
+      render 'Edit'
     end
   end
 
